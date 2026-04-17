@@ -1,7 +1,6 @@
 <?php
 
-$box=['name'=>'onion','price'=>200,'weight=>160'];
+$box = ['name' => 'onion', 'price' => 200, 'weight' => 160];
 
 
-print_r ($box);
-?>
+print_r($box);
