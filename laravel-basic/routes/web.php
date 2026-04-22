@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HelloController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\RequestController;
+use App\Http\Controllers\ResponseController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -19,10 +22,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/hello', [HelloController::class,'index']);
+Route::get('/hello', [HelloController::class, 'index']);
 
 
-Route::get('/products', [ProductController::class,'index']);
+Route::get('/products', [ProductController::class, 'index']);
 
-Route::get('/products/{id}', [ProductController::class,'show']);
+Route::get('/products/{id}', [ProductController::class, 'show']);
 
+Route::get('/requests/create', [RequestController::class, 'create']);
+
+Route::post('/requests/confirm', [RequestController::class, 'confirm'])->name('requests.confirm');
+
+Route::get('/responses', [ResponseController::class, 'index']);
