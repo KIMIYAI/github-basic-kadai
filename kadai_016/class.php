@@ -16,7 +16,7 @@
 
             public function show_price()
             {
-                echo $this->name . '<br>';
+                echo $this->price . '<br>';
             }
             public function __construct(string $name, int $price)
             {
@@ -35,7 +35,7 @@
             private $height;
             private $weight;
 
-            public function show_height($name, $height, $weight)
+            public function show_height()
             {
                 echo $this->height . '<br>';
             }
