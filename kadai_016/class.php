@@ -27,7 +27,7 @@
 
         $food = new Food('カップラーメン', 250);
         print_r($food);
-
+        $food->show_price();
 
         class Animal
         {
@@ -49,8 +49,10 @@
         }
         $animal = new Animal('アルパカ', 60, 30);
         print_r($animal);
+        $animal->show_height();
 
         ?>
+
 
     </p>
 </body>
