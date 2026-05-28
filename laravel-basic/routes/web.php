@@ -61,9 +61,9 @@ Route::post('/requests/confirmnpm installnpm install', [RequestController::class
 
 Route::get('/responses', [ResponseController::class, 'index']);
 
-Route::get('/sign-in', [SignInController::class, 'create']);
+// Route::get('/sign-in', [SignInController::class, 'create']);
 
-Route::post('/sign-in', [SignInController::class, 'store'])->name('sign-in.store');
+// Route::post('/sign-in', [SignInController::class, 'store'])->name('sign-in.store');
 
 Route::get('/cookies', [CookieController::class, 'index']);
 
