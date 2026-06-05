@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Todo;
 use App\Models\Goal;
-
-use Illuuse Illuminate\Support\Facades\Auth;
-minate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class TodoController extends Controller
 {
@@ -46,7 +46,8 @@ class TodoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Todo  $todo
      * @return \Illuminate\Http\Response
-     */
+     */ 
+
     public function update(Request $request, Goal $goal, Todo $todo) {
     {
          $request->validate([
