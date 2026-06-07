@@ -15,7 +15,7 @@ class TodoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-   
+
 
     /**
      * Store a newly created resource in storage.
@@ -23,8 +23,9 @@ class TodoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Goal $goal) {
+    public function store(Request $request, Goal $goal)
     {
+
         $request->validate([
             'content' => 'required',
         ]);
@@ -34,23 +35,24 @@ class TodoController extends Controller
         $todo->user_id = Auth::id();
         $todo->goal_id = $goal->id;
         $todo->done = false;
-        $todo->save();        
+        $todo->save();
 
         return redirect()->route('goals.index');
     }
 
-   
+
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Todo  $todo
      * @return \Illuminate\Http\Response
-     */ 
+     */
 
-    public function update(Request $request, Goal $goal, Todo $todo) {
+    public function update(Request $request, Goal $goal, Todo $todo)
     {
-         $request->validate([
+
+        $request->validate([
             'content' => 'required',
         ]);
 
@@ -60,7 +62,7 @@ class TodoController extends Controller
         $todo->done = $request->boolean('done', $todo->done);
         $todo->save();
 
-        return redirect()->route('goals.index');    
+        return redirect()->route('goals.index');
     }
 
     /**
@@ -69,11 +71,11 @@ class TodoController extends Controller
      * @param  \App\Models\Todo  $todo
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Goal $goal, Todo $todo) {        
-    {
-         $todo->delete();
+    public function destroy(Goal $goal, Todo $todo)
+    { {
+            $todo->delete();
 
-        return redirect()->route('goals.index');        
-    }
+            return redirect()->route('goals.index');
+        }
     }
 }
