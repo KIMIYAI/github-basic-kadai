@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>新規投稿</title>
+    <title>投稿編集</title>
 </head>
 
 <body>
@@ -24,7 +24,7 @@
     </header>
 
     <main>
-        <h1>新規投稿</h1>
+        <h1>投稿編集</h1>
 
         @if ($errors->any())
         <ul>
@@ -36,17 +36,18 @@
 
         <a href="{{ route('posts.index') }}">&lt; 戻る</a>
 
-        <form action="{{ route('posts.store') }}" method="POST">
+        <form action="{{ route('posts.update', $post) }}" method="POST">
             @csrf
+            @method('PATCH')
             <div>
                 <label for="title">タイトル</label>
-                <input type="text" id="title" name="title" value="{{ old('title') }}">
+                <input type="text" id="title" name="title" value="{{ old('title', $post->title) }}">
             </div>
             <div>
                 <label for="content">本文</label>
-                <textarea id="content" name="content">{{ old('content') }}</textarea>
+                <textarea id="content" name="content">{{ old('content', $post->content) }}</textarea>
             </div>
-            <button type="submit">投稿</button>
+            <button type="submit">更新</button>
         </form>
     </main>
 
